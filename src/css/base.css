@@ -1,0 +1,10 @@
+:root {
+  --mainGray: #333333;
+  --mainWhite: #f1f1f1;
+  --mainYellow: #f2c57c; }
+
+body {
+  background: var(--mainGray); }
+
+@font-face {}header h1 {
+  color: var(--mainYellow); }

@@ -1,0 +1,12 @@
+:root{
+    --mainGray: #333333;
+    --mainWhite: #f1f1f1;
+    --mainYellow: #f2c57c;
+}
+
+body{
+    background: var(--mainGray);
+}
+
+@import "./fonts.scss";
+@import "./header.scss";
