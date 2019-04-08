@@ -1,10 +1,31 @@
+@font-face {
+  font-display: swap;
+  font-family: "averia";
+  font-weight: 300;
+  src: url("/src/fonts/AveriaSerifLibre-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-display: swap;
+  font-family: "averia";
+  font-weight: 100;
+  src: url("/src/fonts/AveriaSerifLibre-Light.ttf"); }
+
+@font-face {
+  font-display: swap;
+  font-family: "averia";
+  font-weight: "500";
+  src: url("/src/fonts/AveriaSerifLibre-Bold.ttf"); }
+
 :root {
   --mainGray: #333333;
   --mainWhite: #f1f1f1;
   --mainYellow: #f2c57c; }
 
 body {
-  background: var(--mainGray); }
+  background: var(--mainGray);
+  font-family: "averia";
+  font-weight: 100; }
 
-@font-face {}header h1 {
-  color: var(--mainYellow); }
+header h1 {
+  color: var(--mainYellow);
+  font-weight: 100; }

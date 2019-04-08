@@ -1,3 +1,5 @@
+@import "./fonts.scss";
+
 :root{
     --mainGray: #333333;
     --mainWhite: #f1f1f1;
@@ -6,7 +8,8 @@
 
 body{
     background: var(--mainGray);
+    font-family: "averia";
+    font-weight: 100;
 }
 
-@import "./fonts.scss";
 @import "./header.scss";

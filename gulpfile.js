@@ -4,7 +4,8 @@ const
     cssNano= require("gulp-cssnano"),
     uglify = require("gulp-uglify"),
     sass = require("gulp-sass"),
-    babel = require("gulp-babel")
+    babel = require("gulp-babel"),
+    gzip = require("gulp-gzip")
 
 sass.compiler = require("node-sass")
 
@@ -37,7 +38,17 @@ gulp.task("uglify",()=>{
 })
 
 gulp.task("build",async()=>{
-    gulp.parallel("sass")
+    gulp.parallel(gulp.series("sass","minify"),gulp.series("babelify","uglify"),"compress")
+    
+})
+
+gulp.task("compress",()=>{
+    return gulp.src([
+        "./src/opt/*",
+        "./src/fonts/*"
+    ])
+    .pipe(gzip())
+    .pipe(gulp.dest("./src/comp"))
 })
 
 gulp.task("watch",()=>{
