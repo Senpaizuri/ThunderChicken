@@ -1,0 +1,49 @@
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #333333;
+    color: var(--mainGray);
+    height: 100vh;
+    min-height: 600px;
+    padding: 2rem;
+    max-width: 1560px;
+    margin: auto;
+    .text-box{
+        h1{
+            font-weight: lighter;
+            font-size: 2.25rem;
+        }
+        h2{
+            font-weight: lighter;
+            font-size: 1.5rem;
+        }
+        svg{
+            opacity: .2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(.5);
+            z-index: -1;
+        }
+    }
+    footer{
+        position: absolute;
+        bottom: 1rem;
+        left: -1rem;
+        width: 100%;
+    }
+}
+.dark{
+    header{
+        color: #f2c57c;
+        color: var(--mainYellow);
+    }
+    svg > *{
+        fill: #f2c57c;
+    }
+}
+@import "./header/timer.scss";
+@import "./header/mode.scss";
+

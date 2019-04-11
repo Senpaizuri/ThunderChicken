@@ -1,0 +1,22 @@
+#mode{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    button{
+        color: inherit;
+        background: transparent;
+        font-family: inherit;
+        border: none;
+        font-size: 1.5rem;
+        font-weight: lighter;
+        padding: .5rem;
+        padding-right: 3rem;
+        border-radius: 5px;
+        .icon{
+            display: block;
+            right: .5rem;
+            top: .5rem;
+            position: absolute;
+        }
+    }
+}

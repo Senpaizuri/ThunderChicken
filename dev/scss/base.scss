@@ -1,15 +1,83 @@
-@import "./fonts.scss";
+@import "./fonts/averia.scss";
 
 :root{
     --mainGray: #333333;
     --mainWhite: #f1f1f1;
     --mainYellow: #f2c57c;
+    
+    --bodySize: calc(1px - 1px);
+}
+
+*,*:after,*:before{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    transition: .3s ease all;
 }
 
 body{
-    background: var(--mainGray);
-    font-family: "averia";
-    font-weight: 100;
+    background: #f2c57c;
+    background: var(--mainYellow);
+    font-family: "averia",sans-serif;
+    font-weight: lighter;
+    overflow: hidden;
+    color: #333333;
+    color: var(--mainGray);
+    a:focus,
+    button:focus{
+        transform: translateY(-.25rem);
+        box-shadow:0 0 5px 0 #333333;
+    }
+    &.dark{
+        background: #333333;
+        background: var(--mainGray);
+        a:focus,
+        button:focus{
+            transform: translateY(-.25rem);
+            box-shadow:0 0 2px 0 #f2c57c;
+        }
+    }
+    use{
+        display: none;
+        &:nth-child(4){
+            display: block;
+        }
+    }
+    &.night{
+        use{
+            display: none;
+            &:nth-child(3){
+                display: block;
+            }
+        }
+    }
+    &.dark{
+        use{
+            display: none;
+            &:nth-child(2){
+                display: block;
+            }
+        }
+        &.night{
+            use{
+                display: none;
+                &:nth-child(1){
+                    display: block;
+                }
+            }
+        }
+    }
 }
 
-@import "./header.scss";
+.hide{
+    display: none;
+}
+
+.icon{
+    height: 1.75rem;
+    width: 1.75rem;
+}
+
+
+@import "./header/header.scss"

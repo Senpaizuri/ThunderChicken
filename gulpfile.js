@@ -38,7 +38,7 @@ gulp.task("uglify",()=>{
 })
 
 gulp.task("build",async()=>{
-    gulp.parallel(gulp.series("sass","minify"),gulp.series("babelify","uglify"),"compress")
+    gulp.parallel(gulp.series("sass","minify"),gulp.series("babelify","uglify"))
     
 })
 
@@ -52,7 +52,7 @@ gulp.task("compress",()=>{
 })
 
 gulp.task("watch",()=>{
-    gulp.watch("dev/scss/*.scss",
+    gulp.watch(["dev/scss/*.scss","dev/scss/*/*.scss"],
         gulp.series("sass","minify")
     )
     gulp.watch("dev/js/*.js",
