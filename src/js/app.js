@@ -4,12 +4,16 @@
   var app = {
     init: function init() {
       app.timer();
+      app.sundial(20);
       app.mode();
 
       if (localStorage.getItem("thunder-mode") == "true") {
         document.body.classList.add("dark");
         document.querySelector("#mode span").innerText = "Light mode";
-      }
+      } // window.addEventListener("resize",()=>{
+      //     app.sundial()
+      // })
+
     },
     timer: function timer() {
       var timeCont = document.querySelector("#time"),
@@ -37,6 +41,14 @@
         document.body.classList.contains("dark") ? changeButt.querySelector("span").textContent = "Light mode" : changeButt.querySelector("span").textContent = "Dark mode";
         localStorage.setItem("thunder-mode", document.body.classList.contains("dark"));
       });
+    },
+    sundial: function sundial(prcnt) {
+      var path = document.querySelector(".solar-box .line path"),
+          celestial = document.querySelector(".solar-box .icon");
+      var pointPer = 0 * Math.floor(path.getTotalLength()),
+          point = path.getPointAtLength(pointPer);
+      celestial.setAttribute("style", "transform: translate(".concat(Math.floor(point.x), "px,").concat(Math.floor(point.y), "px);"));
+      console.log("left:".concat(Math.floor(point.x), "px;top:").concat(Math.floor(point.y), "px;"));
     }
   };
   app.init();

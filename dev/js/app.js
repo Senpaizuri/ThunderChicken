@@ -2,11 +2,15 @@
     const app = {
         init:()=>{
             app.timer()
+            app.sundial(20)
             app.mode()
             if(localStorage.getItem("thunder-mode") == "true"){
                 document.body.classList.add("dark")
                 document.querySelector("#mode span").innerText = "Light mode"
             }
+            // window.addEventListener("resize",()=>{
+            //     app.sundial()
+            // })
         },
         timer:()=>{
             const
@@ -37,11 +41,24 @@
             const
                 changeCont = document.querySelector("#mode"),
                 changeButt = changeCont.querySelector("button")
+
             changeButt.addEventListener("click",()=>{
                 document.body.classList.toggle("dark")
                 document.body.classList.contains("dark") ? changeButt.querySelector("span").textContent = "Light mode" : changeButt.querySelector("span").textContent = "Dark mode"
                 localStorage.setItem("thunder-mode",document.body.classList.contains("dark"))
             })
+        },
+        sundial:(prcnt)=>{
+            const 
+                path = document.querySelector(".solar-box .line path"),
+                celestial = document.querySelector(".solar-box .icon")
+            
+            let
+                pointPer = 0*Math.floor(path.getTotalLength()),
+                point = path.getPointAtLength(pointPer)
+            
+            celestial.setAttribute("style",`transform: translate(${Math.floor(point.x)}px,${Math.floor(point.y)}px);`)        
+            console.log(`left:${Math.floor(point.x)}px;top:${Math.floor(point.y)}px;`)
         }
     }
     app.init()

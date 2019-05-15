@@ -1,0 +1,22 @@
+{
+    "short_name": "ThunderChicken",
+    "name": "ThunderChicken - Front-end Developer",
+    "icons": [
+      {
+        "src": "/src/assets/icons/icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/src/assets/icons/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#333333",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#f2c57c"
+  }
+  

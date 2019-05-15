@@ -13,7 +13,7 @@
     padding: 0;
     position: relative;
     box-sizing: border-box;
-    transition: .3s ease all;
+    transition: 0s ease all;
 }
 
 body{
@@ -24,11 +24,6 @@ body{
     overflow: hidden;
     color: #333333;
     color: var(--mainGray);
-    a:focus,
-    button:focus{
-        transform: translateY(-.25rem);
-        box-shadow:0 0 5px 0 #333333;
-    }
     &.dark{
         background: #333333;
         background: var(--mainGray);

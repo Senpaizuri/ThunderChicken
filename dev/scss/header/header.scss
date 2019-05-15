@@ -10,6 +10,10 @@ header{
     padding: 2rem;
     max-width: 1560px;
     margin: auto;
+    .dark &{
+        color: #f2c57c;
+        color: var(--mainYellow);
+    }
     .text-box{
         h1{
             font-weight: lighter;
@@ -36,14 +40,11 @@ header{
     }
 }
 .dark{
-    header{
-        color: #f2c57c;
-        color: var(--mainYellow);
-    }
     svg > *{
         fill: #f2c57c;
     }
 }
+
 @import "./header/timer.scss";
 @import "./header/mode.scss";
-
+@import "./header/solar.scss";

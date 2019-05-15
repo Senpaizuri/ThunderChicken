@@ -27,7 +27,7 @@
   padding: 0;
   position: relative;
   box-sizing: border-box;
-  transition: .3s ease all; }
+  transition: 0s ease all; }
 
 body {
   background: #f2c57c;
@@ -37,10 +37,6 @@ body {
   overflow: hidden;
   color: #333333;
   color: var(--mainGray); }
-  body a:focus,
-  body button:focus {
-    transform: translateY(-0.25rem);
-    box-shadow: 0 0 5px 0 #333333; }
   body.dark {
     background: #333333;
     background: var(--mainGray); }
@@ -84,6 +80,9 @@ header {
   padding: 2rem;
   max-width: 1560px;
   margin: auto; }
+  .dark header {
+    color: #f2c57c;
+    color: var(--mainYellow); }
   header .text-box h1 {
     font-weight: lighter;
     font-size: 2.25rem; }
@@ -102,10 +101,6 @@ header {
     bottom: 1rem;
     left: -1rem;
     width: 100%; }
-
-.dark header {
-  color: #f2c57c;
-  color: var(--mainYellow); }
 
 .dark svg > * {
   fill: #f2c57c; }
@@ -140,3 +135,33 @@ header {
       right: .5rem;
       top: .5rem;
       position: absolute; }
+
+.solar-box {
+  position: absolute;
+  width: 100vw;
+  left: -.25rem;
+  top: 33vh;
+  pointer-events: none; }
+  .solar-box .line {
+    width: 1560px;
+    left: calc(50% - (1560px/2)); }
+    .solar-box .line path {
+      fill: none;
+      stroke: #333;
+      stroke-width: 7;
+      stroke-miterlimit: 10;
+      stroke-dasharray: 11.9579, 11.9579;
+      opacity: .25;
+      animation: ticking 90s linear infinite; }
+      .dark .solar-box .line path {
+        stroke: #f2c57c; }
+  .solar-box .icon {
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+@keyframes ticking {
+  0% {
+    stroke-dashoffset: 0; }
+  100% {
+    stroke-dashoffset: 100%; } }
