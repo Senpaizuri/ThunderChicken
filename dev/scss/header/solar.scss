@@ -1,20 +1,20 @@
 .solar-box {
     position: absolute;
-    width: 100vw;
-    left: -.25rem;
-    top: 33vh;
+    width: 1024px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(50% - 300px);
     pointer-events: none;
     .line{
-        width: 1560px;
-        left: calc(50% - (1560px/2));
+        width: 1024px;
+        margin: auto;
         path{
             fill: none;
             stroke: #333;
             stroke-width: 7;
-            stroke-miterlimit: 10;
-            stroke-dasharray: 11.9579, 11.9579;
+            stroke-dasharray: 10;
             opacity: .25;
-            animation: ticking 90s linear infinite;
+            animation: ticking 180s linear infinite;
             .dark &{
                 stroke: #f2c57c;
             }
@@ -32,6 +32,6 @@
         stroke-dashoffset: 0;
     }
     100%{
-        stroke-dashoffset: 100%;
+        stroke-dashoffset: -100%;
     }
 }
