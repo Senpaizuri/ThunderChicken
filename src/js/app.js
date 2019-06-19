@@ -29,7 +29,7 @@
           da = date.getDate();
       dayCont.innerText = "".concat(days[d], " ").concat(da == 1 ? "1th" : da == 2 ? "2nd" : da == 3 ? "3rd" : da + "th", " ").concat(months[mo]);
       clockCont.innerText = "".concat(h < 10 ? "0" + h : h, ":").concat(m < 10 ? "0" + m : m, ".").concat(s < 10 ? "0" + s : s);
-      h <= 6 || h >= 19 ? document.body.classList.add("night") : document.body.classList.remove("night");
+      h <= 6 || h >= 18 ? document.body.classList.add("night") : document.body.classList.remove("night");
       app.sundial(h / 23);
       setTimeout(app.timer, 1000);
     },

@@ -29,7 +29,7 @@
             dayCont.innerText = `${days[d]} ${da == 1 ? "1th" : da == 2 ? "2nd" : da == 3 ? "3rd" : da +"th" } ${months[mo]}`
             clockCont.innerText = `${h < 10 ? "0" + h : h}:${m < 10 ? "0" + m : m}.${s < 10 ? "0" + s : s}`
 
-            h <= 6 || h >= 19 ? document.body.classList.add("night") : document.body.classList.remove("night")
+            h <= 6 || h >= 18 ? document.body.classList.add("night") : document.body.classList.remove("night")
 
             app.sundial(h/23)
 
