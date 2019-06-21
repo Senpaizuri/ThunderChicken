@@ -53,7 +53,7 @@
       var path = document.querySelector(".solar-box .line path"),
           celestial = document.querySelector(".solar-box .icon");
       var pathTotal = Math.floor(path.getTotalLength()),
-          pathLeft = pathTotal * (solarRatio != false ? solarRatio : 1),
+          pathLeft = pathTotal * (solarRatio != false ? solarRatio * .6 : .8),
           pathOffset = (pathTotal - pathLeft) / 2,
           point = path.getPointAtLength(pathOffset + prcnt * pathLeft);
       celestial.style.transform = "translate(".concat(Math.floor(point.x - 24), "px,").concat(Math.floor(point.y - 24), "px)");

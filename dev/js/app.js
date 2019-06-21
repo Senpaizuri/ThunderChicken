@@ -60,7 +60,7 @@
             
             let
                 pathTotal = Math.floor(path.getTotalLength()),
-                pathLeft = pathTotal * (solarRatio != false ? solarRatio : 1),
+                pathLeft = pathTotal * (solarRatio != false ? solarRatio*.6 : .8),
                 pathOffset = (pathTotal-pathLeft)/2,
                 point = path.getPointAtLength(pathOffset+(prcnt*pathLeft))
             
