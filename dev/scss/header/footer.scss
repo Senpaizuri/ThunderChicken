@@ -1,0 +1,41 @@
+.contact-box{
+    position: absolute;
+    bottom: 1rem;
+    left: 0rem;
+    width: 100%;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: .75rem;
+        color: inherit;
+        li{
+            margin: 1rem .25rem;
+            color: inherit;
+            a{
+                padding: .5rem 1rem;
+                border-radius: 10px;
+                text-decoration: none;
+                transition: .3s ease all;
+                border: 1px solid var(--mainGray);
+                display: inline-block;
+                color: inherit;
+                &:hover{
+                    color: var(--mainYellow);
+                    background: var(--mainGray);
+                    transform: translateY(-.25rem);
+                }
+            }
+        }
+    }
+}
+.dark .contact-box{
+    ul li a{
+        border: 1px solid var(--mainYellow);
+        &:hover{
+            color: var(--mainGray);
+            background: var(--mainYellow);
+        }
+    }
+}

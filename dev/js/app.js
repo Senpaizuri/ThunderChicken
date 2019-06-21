@@ -1,15 +1,20 @@
 (()=>{
+    let solarRatio = 0
     const app = {
         init:()=>{
+            const solarBox = document.querySelector(".solar-box")
             app.timer()
             app.mode()
             if(localStorage.getItem("thunder-mode") == "true"){
                 document.body.classList.add("dark")
                 document.querySelector("#mode span").innerText = "Light mode"
             }
-            // window.addEventListener("resize",()=>{
-            //     app.sundial()
-            // })
+            window.addEventListener("resize",e=>{
+                solarRatio = solarBox.clientWidth > window.innerWidth && (window.innerWidth/solarBox.clientWidth)
+            })
+            window.onload = ()=>{
+                solarRatio = solarBox.clientWidth > window.innerWidth && (window.innerWidth/solarBox.clientWidth)
+            }
         },
         timer:()=>{
             const
@@ -31,11 +36,11 @@
 
             h <= 6 || h >= 18 ? document.body.classList.add("night") : document.body.classList.remove("night")
 
-            app.sundial(h/23)
+            app.sundial((h/23))
 
             setTimeout(
                 app.timer
-            ,1000)
+            ,100)
         },
         mode:()=>{
             const
@@ -44,7 +49,7 @@
 
             changeButt.addEventListener("click",()=>{
                 document.body.classList.toggle("dark")
-                document.body.classList.contains("dark") ? changeButt.querySelector("span").textContent = "Light mode" : changeButt.querySelector("span").textContent = "Dark mode"
+                changeButt.querySelector("span").textContent = document.body.classList.contains("dark") ? "Light mode" :  "Dark mode"
                 localStorage.setItem("thunder-mode",document.body.classList.contains("dark"))
             })
         },
@@ -54,10 +59,13 @@
                 celestial = document.querySelector(".solar-box .icon")
             
             let
-                pointPer = prcnt*Math.floor(path.getTotalLength()),
-                point = path.getPointAtLength(pointPer)
+                pathTotal = Math.floor(path.getTotalLength()),
+                pathLeft = pathTotal * (solarRatio != false ? solarRatio : 1),
+                pathOffset = (pathTotal-pathLeft)/2,
+                point = path.getPointAtLength(pathOffset+(prcnt*pathLeft))
             
-            celestial.setAttribute("style",`transform: translate(${Math.floor(point.x-14)}px,${Math.floor(point.y-14)}px);`)        
+            celestial.style.transform = `translate(${Math.floor(point.x-24)}px,${Math.floor(point.y-24)}px)`
+            celestial.style.opacity = 1
         }
     }
     app.init()

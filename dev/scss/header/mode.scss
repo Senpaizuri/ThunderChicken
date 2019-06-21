@@ -19,4 +19,12 @@
             position: absolute;
         }
     }
+    @media (max-width:450px) {
+        span{
+            display: none;
+        }
+        button{
+            padding: 1rem;
+        }
+    }
 }

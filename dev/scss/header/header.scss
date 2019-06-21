@@ -21,7 +21,7 @@ header{
         }
         h2{
             font-weight: lighter;
-            font-size: 1.5rem;
+            font-size: 1.33rem;
         }
         svg{
             opacity: .2;
@@ -32,12 +32,6 @@ header{
             z-index: -1;
         }
     }
-    footer{
-        position: absolute;
-        bottom: 1rem;
-        left: -1rem;
-        width: 100%;
-    }
 }
 .dark{
     svg > *{
@@ -45,6 +39,7 @@ header{
     }
 }
 
-@import "./header/timer.scss";
-@import "./header/mode.scss";
-@import "./header/solar.scss";
+@import "./timer.scss";
+@import "./mode.scss";
+@import "./solar.scss";
+@import "./footer.scss";

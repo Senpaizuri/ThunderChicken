@@ -27,11 +27,6 @@ body{
     &.dark{
         background: #333333;
         background: var(--mainGray);
-        a:focus,
-        button:focus{
-            transform: translateY(-.25rem);
-            box-shadow:0 0 2px 0 #f2c57c;
-        }
     }
     use{
         display: none;
