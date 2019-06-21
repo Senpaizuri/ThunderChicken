@@ -34,7 +34,7 @@ body {
   background: var(--mainYellow);
   font-family: "averia",sans-serif;
   font-weight: lighter;
-  overflow: hidden;
+  overflow-x: hidden;
   color: #333333;
   color: var(--mainGray); }
   body.dark {
@@ -74,7 +74,8 @@ header {
   height: 100vh;
   min-height: 600px;
   padding: 2rem;
-  max-width: 1560px;
+  max-width: calc(1024px + 5rem);
+  overflow-x: hidden;
   margin: auto; }
   .dark header {
     color: #f2c57c;
@@ -176,10 +177,11 @@ header {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: .75rem;
-    color: inherit; }
+    color: inherit;
+    max-width: 20rem;
+    margin: 1rem auto; }
     .contact-box ul li {
-      margin: 1rem .25rem;
+      margin: .5rem .25rem;
       color: inherit; }
       .contact-box ul li a {
         padding: .5rem 1rem;

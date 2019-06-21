@@ -8,10 +8,11 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin: .75rem;
         color: inherit;
+        max-width: 20rem;
+        margin: 1rem auto;
         li{
-            margin: 1rem .25rem;
+            margin: .5rem .25rem;
             color: inherit;
             a{
                 padding: .5rem 1rem;

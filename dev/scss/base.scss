@@ -21,7 +21,7 @@ body{
     background: var(--mainYellow);
     font-family: "averia",sans-serif;
     font-weight: lighter;
-    overflow: hidden;
+    overflow-x: hidden;
     color: #333333;
     color: var(--mainGray);
     &.dark{
