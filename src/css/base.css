@@ -152,6 +152,12 @@ header {
       animation: ticking 180s linear infinite; }
       .dark .solar-box .line path {
         stroke: #f2c57c; }
+    .solar-box .line circle {
+      fill: #333; }
+      .dark .solar-box .line circle {
+        fill: #f2c57c; }
+    .solar-box .line g {
+      opacity: .25; }
   .solar-box .icon {
     opacity: 0;
     position: absolute;

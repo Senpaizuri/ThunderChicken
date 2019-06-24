@@ -19,6 +19,15 @@
                 stroke: #f2c57c;
             }
         }
+        circle{
+            fill: #333;
+            .dark &{
+                fill: #f2c57c;
+            }
+        }
+        g{
+            opacity: .25;
+        }
     }
     .icon{
         opacity: 0;
